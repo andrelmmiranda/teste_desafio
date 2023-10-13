@@ -8,7 +8,7 @@ class TransactionController{
         const { HTTP_200_OK, HTTP_400_BAD_REQUEST } = StatusCode;
 
         try{
-            const data = await TransactionService.getTransactions(req.payload);
+            const data = await TransactionService.getTransactions(req.payload, req.query);
 
             return res.status(HTTP_200_OK).json(data);
         } catch(error){
