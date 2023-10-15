@@ -4,8 +4,8 @@ const { UserController } = require('../../controllers');
 
 const userRoutes = Router();
 
-userRoutes.get('/usuario', tokenValidator, UserController.getUser);
-
-userRoutes.put('/usuario', FieldValidator.userValidator, tokenValidator, UserController.updateUser);
+userRoutes.use(tokenValidator)
+userRoutes.get('/usuario', UserController.getUser);
+userRoutes.put('/usuario', FieldValidator.userValidator, UserController.updateUser);
 
 module.exports = { userRoutes };

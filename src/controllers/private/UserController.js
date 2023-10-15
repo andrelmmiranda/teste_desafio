@@ -3,7 +3,6 @@ const { UserService } = require('../../services');
 const { StatusCode, beginCommitDecorator } = require('../../utils');
 
 class UserController{
-
     static async getUser(req, res){
         const { HTTP_200_OK, HTTP_404_NOT_FOUND, HTTP_400_BAD_REQUEST } = StatusCode;
 
