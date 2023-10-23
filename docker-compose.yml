@@ -1,12 +1,12 @@
 version: '3'
 services:
   postgres:
-    image: postgres:latest
+    image: postgres:15
     ports:
       - "5432:5432"
     container_name: postgresql
     environment:
-      POSTGRES_PASSWORD: 123
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
     volumes:
       - volume_postgresql:/var/lib/postgresql/data
 
